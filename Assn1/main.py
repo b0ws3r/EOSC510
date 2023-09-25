@@ -144,7 +144,7 @@ def q_2_c():
     # goal: loop through every combination of normalized predictors, make linear model, and find one with best performance
     R2_best = []
     combo_best = []
-    for kk in range(1, 5):  # for each total number of predictors to use in model (from 1 predictor to 5)
+    for kk in range(1, 6):  # for each total number of predictors to use in model (from 1 predictor to 5)
         v0 = range(np.shape(X_norm)[1])
         combinations = list(itertools.combinations(range(np.shape(X_norm)[1]), kk))  # all possible combinations of kk total predictors
         R2_test = []

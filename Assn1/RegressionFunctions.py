@@ -29,6 +29,7 @@ def stepwise_selection(X, y,
         new_pval = pd.Series(index=excluded,dtype='float64')
         for new_column in excluded:
             model = sm.OLS(y, sm.add_constant(pd.DataFrame(X[included+[new_column]]))).fit()
+            print('p-vals: {p}'.format(p=str(model.pvalues)))
             new_pval[new_column] = model.pvalues[new_column]
         best_pval = new_pval.min()
 
